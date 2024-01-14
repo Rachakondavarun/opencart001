@@ -50,10 +50,10 @@ public class SearchTest extends Base{
 
 		searchPage = homePage.searchForAProduct(dataProp.getProperty("invalidPassword"));
 	
-		Assert.assertEquals(searchPage.retrieveNoSuchProductMessageText(),"abcd","No Product Message In Search Results Is Not Displayed");
+		Assert.assertEquals(searchPage.retrieveNoSuchProductMessageText(),dataProp.getProperty("noProductTextInSearchResults"),"No Product Message In Search Results Is Not Displayed");
 	}
 	
-	@Test(priority=3,dependsOnMethods = {"VerifySearchWithValidProduct","VerifySearchWithInvalidProduct"})
+	@Test(priority=3,)
 	public void VerifySearchWithoutAnyProduct() {
 		
 
